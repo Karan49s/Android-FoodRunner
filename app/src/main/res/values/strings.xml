@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">FoodRunner</string>
+    <string name="mobile_number">Mobile Number(10 digits)</string>
+    <string name="password">Enter Password (Min. 4 characters)</string>
+    <string name="log_in">LOG IN</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="register_yourself">Dont have an account? Sign up now</string>
+    <string name="prefrence_file_name">Avengers Prefrences</string>
+    <string name="name_min_3_characters"> Name(Min. 3 characters)</string>
+    <string name="delivery_address">Delivery Address</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="email_address">Email Address</string>
+    <string name="register">Register</string>
+    <string name="message">Enter your registered mobile and email below:</string>
+    <string name="foodrunner">FoodRunner</string>
 </resources>
