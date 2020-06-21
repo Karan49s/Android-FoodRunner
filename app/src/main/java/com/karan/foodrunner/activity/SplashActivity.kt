@@ -1,4 +1,4 @@
-package com.karan.foodrunner
+package com.karan.foodrunner.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.widget.ImageView
 import android.widget.TextView
+import com.karan.foodrunner.R
 
 class SplashActivity : AppCompatActivity() {
     lateinit var logo :ImageView
@@ -22,7 +23,8 @@ class SplashActivity : AppCompatActivity() {
 
 
         Handler().postDelayed({
-            startActivity(Intent(this,LoginActivity::class.java))
+            startActivity(Intent(this,
+                LoginActivity::class.java))
             finish()
         }, SPLASH_TIME_OUT)
 

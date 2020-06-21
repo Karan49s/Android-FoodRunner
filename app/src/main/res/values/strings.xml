@@ -13,4 +13,12 @@
     <string name="register">Register</string>
     <string name="message">Enter your registered mobile and email below:</string>
     <string name="foodrunner">FoodRunner</string>
+    <string name="my_profile">My Profile</string>
+    <string name="favourite_restaurants">Favourite Restaurants</string>
+    <string name="forgot_pass_txt">Enter your registered mobile no. and email below :</string>
+    <string name="newpass">New Password (Min. 4 characters)</string>
+    <string name="next">Next</string>
+    <string name="submit">Submit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

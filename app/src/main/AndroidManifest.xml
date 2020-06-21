@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.karan.foodrunner">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,12 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Register"></activity>
-        <activity android:name=".ForgotPassword" />
-        <activity android:name=".LoggedInActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".fragment.FavouriteFragment" />
+        <activity android:name=".activity.PasswordReset" />
+        <activity android:name=".activity.Register" />
+        <activity android:name=".activity.ForgotPassword" />
+        <activity android:name=".activity.LoggedInActivity" />
+        <activity android:name=".activity.LoginActivity" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".activity.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
