@@ -4,34 +4,33 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
 import com.karan.foodrunner.R
 import com.karan.foodrunner.util.ConnectionManager
 import org.json.JSONException
 import org.json.JSONObject
-import com.android.volley.Request
-import com.android.volley.Response
-import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.Volley
 
 class LoginActivity : AppCompatActivity(){
 
-    lateinit var etMobileNumber: EditText
-    lateinit var etPassword : EditText
+    private lateinit var etMobileNumber: EditText
+    private lateinit var etPassword : EditText
     lateinit var btnLogin : Button
-    lateinit var txtForgotPassword: TextView
-    lateinit var txtRegister : TextView
+    private lateinit var txtForgotPassword: TextView
+    private lateinit var txtRegister : TextView
 
     lateinit var sharedPreferences: SharedPreferences
 
-    var mobilePattern = "[7-9][0-9]{9}"
+    private var mobilePattern = "[7-9][0-9]{9}"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,7 +73,13 @@ class LoginActivity : AppCompatActivity(){
             val mobileNumber= etMobileNumber.text.toString()
             val password = etPassword.text.toString()
 
-            if(validations(mobileNumber,password)) {
+            if (mobileNumber.isEmpty()) {
+                Toast.makeText(this@LoginActivity, "Enter Mobile Number", Toast.LENGTH_LONG).show()
+            } else if(password.isEmpty()) {
+                Toast.makeText(this@LoginActivity, "Enter Password", Toast.LENGTH_LONG).show()
+            }else if(!mobileNumber.trim().matches(mobilePattern.toRegex())) {
+                Toast.makeText(this@LoginActivity, "Enter a valid Mobile number", Toast.LENGTH_LONG).show()
+            }else{
 
                 if (ConnectionManager().checkConnectivity(this@LoginActivity)) {
 
@@ -85,7 +90,7 @@ class LoginActivity : AppCompatActivity(){
                     jsonParams.put("password", password)
 
                     val jsonObjectRequest =
-                        object : JsonObjectRequest(Request.Method.POST, url, jsonParams, Response.Listener {
+                        object : JsonObjectRequest(Method.POST, url, jsonParams, Response.Listener {
                             try {
                                 val data = it.getJSONObject("data")
                                 val success = data.getBoolean("success")
@@ -128,16 +133,12 @@ class LoginActivity : AppCompatActivity(){
                                 e.printStackTrace()
                             }
                         }, Response.ErrorListener {
-                            Toast.makeText(
-                                this@LoginActivity,
-                                "Volley error occurred",
-                                Toast.LENGTH_SHORT
-                            ).show()
+                            Toast.makeText(this@LoginActivity, "Volley error occurred", Toast.LENGTH_SHORT).show()
                         }) {
                             override fun getHeaders(): MutableMap<String, String> {
                                 val headers = HashMap<String, String>()
                                 headers["Content-type"] = "application/json"
-                                headers["token"] = "9a5b7e4b6805f2"
+                                headers["token"] = getString(R.string.token)
                                 return headers
                             }
                         }
@@ -166,28 +167,6 @@ class LoginActivity : AppCompatActivity(){
     }
 
 
-    private fun validations(phone:String,password:String):Boolean {
-
-        if (phone.isEmpty()) {
-            Toast.makeText(this@LoginActivity, "Enter Mobile Number", Toast.LENGTH_LONG).show()
-            return false
-        } else if(password.isEmpty()) {
-            Toast.makeText(this@LoginActivity, "Enter Password", Toast.LENGTH_LONG).show()
-            return false
-        }else if(!phone.trim().matches(mobilePattern.toRegex())) {
-            Toast.makeText(
-                this@LoginActivity,
-                "Enter a valid Mobile number",
-                Toast.LENGTH_LONG
-            )
-                .show()
-            return false
-        }else{
-            return true
-        }
-
-
-    }
 
 
 

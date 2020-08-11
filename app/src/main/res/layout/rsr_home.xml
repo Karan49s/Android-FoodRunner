@@ -6,7 +6,8 @@
     android:background="@color/colorPrimaryDark"
     android:layout_margin="6dp"
     app:cardCornerRadius="5dp"
-    app:cardBackgroundColor="@color/colorPrimaryDark">
+    app:cardBackgroundColor="@color/colorPrimaryDark"
+    android:id="@+id/crdviewrestaurant">
 
     <LinearLayout
         android:id="@+id/llContent"
@@ -16,62 +17,76 @@
         android:orientation="horizontal"
         android:weightSum="6">
 
-        <!--The weight sum property is used to divide the layout into
-        different parts and then giving each layout a particular weight
-        gives it that amount of space on the screen-->
-
-
-        <!--Since each parent layout will have a specific weight, we need
-        not give any width to those layout-->
-
         <ImageView
-            android:id="@+id/imgBookImage"
+            android:id="@+id/imgRestaurant"
             android:layout_width="0dp"
             android:layout_height="120dp"
             android:layout_weight="1.5"
             android:padding="5dp"
+            android:layout_marginLeft="5dp"
             android:scaleType="centerCrop"
             android:src="@mipmap/ic_launcher"
             />
 
         <RelativeLayout
+            android:id="@+id/rl"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="3.3"
             android:background="@color/colorPrimaryDark">
 
             <TextView
-                android:id="@+id/txtBookName"
+                android:id="@+id/restsurantName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="Name of the book"
+                android:text="Name of the Restaurant"
                 android:textColor="@color/colorAccent"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/txtBookPrice"
+                android:id="@+id/pricesym"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/restsurantName"
+                android:padding="3dp"
+                android:layout_marginLeft="12dp"
+                android:text="₹"
+                android:textColor="#E5EAE5"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txtBookName"
-                android:padding="15dp"
-                android:text="₹ 299/person"
+                android:layout_below="@+id/restsurantName"
+                android:layout_toEndOf="@id/pricesym"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="3dp"
+                android:text="299/person"
                 android:textColor="#E5EAE5"
                 android:textSize="15sp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
 
-        <!--Many times we see that texts have an image along with them to
-        their right or left. This is added with the help of the
-        drawableLeft (or drawableRight and so on) attribute-->
-
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.2">
+            <ImageButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_fav"
+                android:background="@color/colorPrimaryDark"
+                android:layout_centerHorizontal="true"
+                android:layout_above="@id/rating"
+                />
+
+
         <TextView
-            android:id="@+id/txtBookRating"
+            android:id="@+id/rating"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Q1">Q1: How does this work?</string>
+
+    <string name="A1">A1: We deliver for our customers from anywhere our customers would like. We take your order by internet and place it with the restaurant. We dispatch a meal courier to pick up the food, pack it in an insulated carrier and deliver it directly to you. Usually, your meal courier will be waiting at the restaurant when the food comes out of the kitchen. We are not affiliated with some of the restaurants and in no way are we claiming to be in business with some of the businesses listed, unless otherwise stated. We also offer grocery delivery services for those who are interested.</string>
+
+    <string name="Q2">Q2: How can I place my order?</string>
+
+    <string name="A2">A2: You can place your order online at www.wedeliverkilleen.com or with our free android app to download https://play.google.com/store/apps/details?id=com.wedeliverkilleen.mobile</string>
+
+    <string name="Q3">Q3: Are the prices different than at the restaurant?</string>
+
+    <string name="A3">A3: We do have a service fee of 10% for our non-partnered restaurants.</string>
+
+    <string name="Q4">Q4: What are Partners</string>
+
+    <string name="A4">A4: Our restaurant partners alleviate some of the costs to the customer and offer lower delivery fees. We DeliverKilleen.com is working to get as many restaurant partners as possible to help alleviate some of the costs for our customers.</string>
+
+    <string name="Q5">Q5: What if the restaurant has changed its prices?</string>
+
+    <string name="A5">A5: If there has been a menu change and there is a difference of more than 5.00 we will contact you to make sure the price difference is ok or if you want to change an item.</string>
+
+    <string name="Q6">Q6: How long does it take for a delivery?:</string>
+
+    <string name="A6">A6: Our normal delivery time is between 45 minutes and 1 hour, however certain situations such as traffic, weather, and restaurant preparation time require extra time. Please know that we are always working hard to get your food delivered as quickly as possible. We appreciate your patience. Placing orders in advance is appreciated.</string>
+
+    <string name="Q7">Q7: When are you getting more restaurants as partners?</string>
+
+    <string name="A7">A7: We would like to deliver for as many restaurants as possible. However, we must establish a relationship agreement with the restaurant to become partners with them. You can help by telling your favorite restaurant\'s owner/manager you want us to deliver their food to you.</string>
+
+    <string name="Q8">Q8: Why are there more restaurants in the delivery catalog than on the website?</string>
+
+    <string name="A8">A8: We deliver for restaurants all over the city. When you log in to the website, the restaurants within your general delivery range will appear.</string>
+
+    <string name="Q9">Q9: How can I put special requests on my online order?</string>
+
+    <string name="A9">A9: Whenever you have a special request, click the EDIT button next to your item and type your request. If you have a food allergy, please note that, too. Requesting extras may cost more and will be added to your total when necessary.</string>
+
+    <string name="Q10">Q10: Does the meal courier check my order?</string>
+
+    <string name="A10">A10: Your meal courier relies on the restaurant staff to prepare and pack your order accurately. For your health safety assurance, meal couriers are not allowed to open containers. Our drivers are food handlers certify even when they don\'t directly prepare your food. Please take a moment to check your order before your meal courier leaves.</string>
+
+    <string name="Q11">Q11: Who do I call if there is a mistake with my order?</string>
+
+    <string name="A11">A11: Please call WE DELIVER at 254–383–9177 within thirty minutes of delivery (even if it is after the office hours) if there is anything missing or incorrect. We will get incorrect items replaced; missing items delivered or arrange for a credit towards your next order. Credits cannot be applied to online orders. To use your credit, please call the office to place your order. Thank you for reporting your concerns to us so we can continue improving our service.</string>
+
+    <string name="Q12">Q12: What happens if I am missing items from my order when it is delivered?</string>
+
+    <string name="A12">A12: Call us within one hour of delivery, so we may contact the restaurant about the shortage. Any credits will be based upon the restaurant\'s decision. Our drivers do not open up containers to verify your food. We rely on the restaurant who is packaging your order to pack it correctly. If the restaurant decides to offer a credit, then we apply a credit to your account to be used on your next order, from any restaurant.</string>
+
+    <string name="Q13">Q13: What is your Refund Policy?</string>
+
+    <string name="A13">A13: The customer is financially responsible for payment once an order is submitted. If you want to change your order, we will attempt to accommodate such wishes within the time constraints and the good will of the participating restaurants. However, if a change is too late to process, you are responsible for payment of the original order. Changes to orders must be phoned to the staff. Our e-mail is not checked often enough to ensure that we get your changes.</string>
+
+    <string name="Q14">Q14: About online credit card usage?</string>
+
+    <string name="A14">A14: Your card is charged online through North American Bankcard. Sometimes restaurants run out of items or prices change if this situation arises we will inform you about the difference of price and will request your authorization to apply the amount to your credit card on file. Occasionally there are times your card may be charged manually, which is why the information is entered online. If you are placing an order for someone else please inform us of the zip code associated with the entered card so that it can be charged manually. in the event, you cancel the order the total amount minus 25% will be reimbursed to the card on file in some cases the total amount minus five dollars will be reimbursed to the card on file, this decision will be taken on a case to case bases on each individual account Thank you!</string>
+
+    <string name="Q15">Q15: Do you have a delivery fee?</string>
+
+    <string name="A15">A15: Yes, our delivery fee varies depending on the restaurant. Most restaurants have a $5.99 delivery fee and if the fee differs, the price will be shown when you hover your mouse over the name of the restaurant.</string>
+</resources>

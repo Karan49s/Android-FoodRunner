@@ -6,12 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".activity.LoggedInActivity"
     android:orientation="vertical"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimary"
+    android:id="@+id/drawerLayout">
 
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/coordinatorLayout">
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,7 +42,7 @@
         android:id="@+id/navigationView"
         android:layout_width="280dp"
         android:layout_height="match_parent"
-        app:headerLayout="@layout/drawer_header"
+
         app:menu="@menu/menu_drawer"
         app:itemTextColor="@color/colorAccent"
         android:layout_gravity="start"

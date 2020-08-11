@@ -4,36 +4,37 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.karan.foodrunner.R
 import com.karan.foodrunner.util.ConnectionManager
-import kotlinx.android.synthetic.main.activity_logged_in.*
+import kotlinx.android.synthetic.main.activity_register.*
 import org.json.JSONObject
 
 class Register : AppCompatActivity() {
     lateinit var name : EditText
-    lateinit var email : EditText
-    lateinit var mobile : EditText
-    lateinit var address : EditText
-    lateinit var pass : EditText
-    lateinit var conpass : EditText
-    lateinit var btnRegister: Button
+    private lateinit var email : EditText
+    private lateinit var mobile : EditText
+    private lateinit var address : EditText
+    private lateinit var pass : EditText
+    private lateinit var conpass : EditText
+    private lateinit var btnRegister: Button
+
 
     lateinit var sharedPreferences: SharedPreferences
 
 
-    var emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
-    var mobilePattern = "[7-9][0-9]{9}"
+    private var emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+    private var mobilePattern = "[7-9][0-9]{9}"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -94,6 +95,7 @@ class Register : AppCompatActivity() {
                             try {
                                 val obj = it.getJSONObject("data")
                                 val success = obj.getBoolean("success")
+                                Toast.makeText(this@Register, "$success", Toast.LENGTH_LONG).show()
                                 if (success) {
                                     val response = obj.getJSONObject("data")
                                     sharedPreferences.edit()
@@ -101,16 +103,11 @@ class Register : AppCompatActivity() {
                                     sharedPreferences.edit()
                                         .putString("user_name", response.getString("name")).apply()
                                     sharedPreferences.edit()
-                                        .putString(
-                                            "user_mobile_number",
-                                            response.getString("mobile_number")
-                                        ).apply()
+                                        .putString("user_mobile_number", response.getString("mobile_number")).apply()
                                     sharedPreferences.edit()
-                                        .putString("user_address", response.getString("address"))
-                                        .apply()
+                                        .putString("user_address", response.getString("address")).apply()
                                     sharedPreferences.edit()
-                                        .putString("user_email", response.getString("email"))
-                                        .apply()
+                                        .putString("user_email", response.getString("email")).apply()
 
                                     sharedPreferences.edit()
                                         .putBoolean("isLoggedIn", true).apply()
@@ -120,7 +117,7 @@ class Register : AppCompatActivity() {
                                     )
                                     finish()
                                 } else {
-                                    //rlRegister.visibility= View.VISIBLE
+                                    ll.visibility= View.VISIBLE
                                     Toast.makeText(
                                         this@Register,
                                         "Some error occurred!",
@@ -128,18 +125,18 @@ class Register : AppCompatActivity() {
                                     ).show()
                                 }
                             } catch (e: Exception) {
-                                //rlRegister.visibility= View.VISIBLE
+                                ll.visibility= View.VISIBLE
                                 e.printStackTrace()
                             }
                         }, Response.ErrorListener {
                             Toast.makeText(this@Register, "Volley Error!", Toast.LENGTH_SHORT)
                                 .show()
-                            //rlRegister.visibility= View.VISIBLE
+                            ll.visibility= View.VISIBLE
                         }) {
                         override fun getHeaders(): MutableMap<String, String> {
                             val headers = HashMap<String, String>()
                             headers["Content-type"] = "application/json"
-                            headers["token"] = "9a5b7e4b6805f2"
+                            headers["token"] = getString(R.string.token)
                             return headers
                         }
                     }
@@ -169,22 +166,6 @@ class Register : AppCompatActivity() {
                 val intent = Intent(this@Register, LoggedInActivity::class.java)
                 startActivity(intent)
             }
-        }
-    }
-
-
-    fun setUpToolbar(){
-        setSupportActionBar(toolbar)
-        supportActionBar?.title="Register Yourself"
-        supportActionBar?.setHomeButtonEnabled(true)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        toolbar.setNavigationOnClickListener {
-            startActivity(
-                Intent(
-                    applicationContext,
-                    LoginActivity::class.java
-                )
-            )
         }
     }
 }
